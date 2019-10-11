@@ -57,6 +57,12 @@ NSInteger const AIR_CALLOUT_OPEN_ZINDEX_BASELINE = 999;
         return;
     }
 
+    // Use anchor if it's not default
+
+    if (!CGPointEqualToPoint(self.centerAnchor, CGPointMake(0.5, 1))) {
+        self.centerOffset = CGPointMake((self.centerAnchor.x - 0.5)*(-bounds.size.width), (self.centerAnchor.y - 0.5)*(-bounds.size.height));
+    }
+    
     self.center = center;
     self.bounds = bounds;
 }
