@@ -525,6 +525,14 @@ const NSInteger AIRMapMaxZoomLevel = 20;
     }
 }
 
+- (void)setMapPadding:(UIEdgeInsets)mapPadding {
+  self.layoutMargins = mapPadding;
+}
+
+- (UIEdgeInsets)mapPadding {
+  return self.layoutMargins;
+}
+
 - (void)cacheViewIfNeeded {
     if (self.hasShownInitialLoading) {
         if (!self.cacheEnabled) {
